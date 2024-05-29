@@ -1,7 +1,13 @@
 const express = require("express")
 const app = express()
+// bring ejs template
+app.set('view engine', 'ejs')
 
+// static
+app.use(express.static('public'))
+app.use(express.static('node_modules'))
 
+//
 app.get('/', (req,res)=> {
 
     res.send(" it is working from web !")
